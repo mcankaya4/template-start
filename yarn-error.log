@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add postcss-cli -D
+  /usr/local/bin/node /usr/local/bin/yarn add -D postcss-custom-media
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Users/musta/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/JetBrains/WebStorm 2021.3/bin:/mnt/c/Users/musta/AppData/Local/Programs/Microsoft VS Code/bin
@@ -14,12 +14,15 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/cankaya/theme/postcss-deneme/package.json: Unexpected token } in JSON at position 220
-      at JSON.parse (<anonymous>)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+  Error: connect ENETUNREACH 2606:4700::6810:1823:443 - Local (:::0)
+      at internalConnect (node:net:931:16)
+      at defaultTriggerAsyncIdScope (node:internal/async_hooks:454:18)
+      at emitLookup (node:net:1075:9)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:107677:29
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:107523:25
+      at RawTask.module.exports.RawTask.call (/usr/local/lib/node_modules/yarn/lib/cli.js:83655:19)
+      at flush (/usr/local/lib/node_modules/yarn/lib/cli.js:83737:29)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11)
 
 npm manifest: 
   {
@@ -28,11 +31,13 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-      "css": "postcss main.css -o style.css"
+      "css": "postcss -w main.css -o style.css"
     },
     "devDependencies": {
-      "postcss-preset-env": "^7.2.3"
-    },
+      "postcss-cli": "^9.1.0",
+      "postcss-preset-env": "^7.2.3",
+      "prettier": "^2.5.1"
+    }
   }
 
 yarn manifest: 
@@ -211,11 +216,6 @@ Lockfile:
     dependencies:
       path-type "^4.0.0"
   
-  dom-walk@^0.1.0:
-    version "0.1.2"
-    resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.2.tgz#0c548bef048f4d1f2a97249002236060daa3fd84"
-    integrity sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==
-  
   electron-to-chromium@^1.4.17:
     version "1.4.57"
     resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.57.tgz#2b2766df76ac8dbc0a1d41249bc5684a31849892"
@@ -291,14 +291,6 @@ Lockfile:
     integrity sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
     dependencies:
       is-glob "^4.0.1"
-  
-  global@^4.4.0:
-    version "4.4.0"
-    resolved "https://registry.yarnpkg.com/global/-/global-4.4.0.tgz#3e7b105179006a323ed71aafca3e9c57a5cc6406"
-    integrity sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==
-    dependencies:
-      min-document "^2.19.0"
-      process "^0.11.10"
   
   globby@^12.0.0:
     version "12.2.0"
@@ -377,13 +369,6 @@ Lockfile:
     dependencies:
       braces "^3.0.1"
       picomatch "^2.2.3"
-  
-  min-document@^2.19.0:
-    version "2.19.0"
-    resolved "https://registry.yarnpkg.com/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
-    integrity sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=
-    dependencies:
-      dom-walk "^0.1.0"
   
   node-releases@^2.0.1:
     version "2.0.1"
@@ -670,15 +655,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
     integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
   
+  prettier@^2.5.1:
+    version "2.5.1"
+    resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
+    integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
+  
   pretty-hrtime@^1.0.3:
     version "1.0.3"
     resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
     integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
-  
-  process@^0.11.10:
-    version "0.11.10"
-    resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
-    integrity sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
   
   queue-microtask@^1.2.2:
     version "1.2.3"

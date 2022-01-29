@@ -1,0 +1,5 @@
+@media (--l) {
+  body {
+    background-color: blue;
+  }
+}

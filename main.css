@@ -1,12 +1,10 @@
-a {
-  color: red;
+@import "css/reset.css";
+@import "css/normalize.css";
+@import "css/variables.css";
+@import "css/general.css";
 
-  &:hover {
-    color: rebeccapurple;
-    background: red;
-  }
-}
-
-body {
-  background: blue;
-}
+@import "css/responsive/xs.css";
+@import "css/responsive/sm.css";
+@import "css/responsive/m.css";
+@import "css/responsive/l.css";
+@import "css/responsive/xl.css";

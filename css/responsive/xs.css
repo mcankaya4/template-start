@@ -1,0 +1,5 @@
+@media (--xs) {
+  body {
+    background-color: red;
+  }
+}

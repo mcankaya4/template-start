@@ -4,11 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "css": "postcss -w main.css -o style.css"
+    "template": "postcss -w main.css -o style.css"
   },
   "devDependencies": {
+    "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-import": "^14.0.2",
     "postcss-preset-env": "^7.2.3",
+    "postcss-simple-vars": "^6.0.3",
     "prettier": "^2.5.1"
   }
 }

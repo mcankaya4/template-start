@@ -1,0 +1,5 @@
+@media (--sm) {
+  body {
+    background-color: green;
+  }
+}
