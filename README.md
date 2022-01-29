@@ -7,4 +7,4 @@ Html ve PostCSS için başlangıç
 4- CSS Klasör yapısı ayarlandı.
 5- CSS Responsive yapısı: xs, xm, m, l, xl olarak ayarlandı.
 
-# Webstormdan Postcss, Prettier, Nodejs ayarlarını yapmayı unutma!!!
+Dipnot: Webstormdan Postcss, Prettier, Nodejs ayarlarını yapmayı unutma!!!
